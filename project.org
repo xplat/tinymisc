@@ -1,13 +1,58 @@
 #+title: TinyAgda project notes
 #+LINK: bib file:readings.bib::%s
 #+LINK: notes file:project.org::#%s
+* ABOUT THIS FILE						       :meta:
+  - This file contains notes and plans for the TinyAgda project.  Right now it
+    is focused on issues of typechecker and compiler implementation, especially
+    efficient term representations and open computation strategies.
+  - It should basically work as-is on a vanilla emacs 23+, but you might want
+    to set up an org-mode keybinding for `reftex-citation' since the usual
+    binding for it is shadowed in org-mode.  It's useful enough to be worth
+    its own binding.
+  - The notes in [[Reading list]] are those that apply fairly directly to
+    particular articles and the issues they raise.  Topic-focused discussion
+    that cites several articles should go under other headings.
 * Reading list
+** HOW TO ADD NOTES HERE 					       :meta:
+   1) If the article is already listed here, skip to step 4.
+   2) Move to the heading you want the article to appear *before*.
+   3) M-x reftex-citation, choose format 'h', find the article in the selector.
+   4) Insert a new heading for your notes (Alt-Enter on the previous line, then
+      Alt-Right to move it in) at the end of the entry or under a note you're
+      replying to or expanding on.
+   5) Write a single-line summary and add appropriate tags with C-c C-q (for
+      most entries 'talk@YourHandle' is appropriate).
+   6) If you need anything beyond the summary, write it indented under the
+      summary line.
+      - You can also make subheads if you like.
+** [[bib:Shao1998][Implementing Typed Intermediate Languages]]
+   - Shao, League & Monnier
+   - ICFP 1998
+:PROPERTIES:
+:Custom_ID: Shao1998
+:END:
+*** [quote pending approval]					    :rec@NAD:
+** [[bib:Liang2004][Choices in Representation and Reduction Strategies for Lambda Terms in Intensional Contexts]]
+   - Liang, Nadathur & Qi
+   - Journal of Automated Reasoning, 2004
+:PROPERTIES:
+:Custom_ID: Liang2004
+:END:
+*** [quote pending approval]					    :rec@NAD:
+** [[bib:Gacek2007][A Simplified Suspension Calculus and its Relationship to Other Explicit Substitution Calculi]]
+   - Gacek & Nadathur
+   - Technical report, 2007
+:PROPERTIES:
+:Custom_ID: Gacek2007
+:END:
+*** [quote pending approval]					    :rec@NAD:
 ** [[bib:Dowek2000][Higher Order Unification via Explicit Substitutions]]
+   - Dowek, Hardin & Kirchner
+   - Information and Computation, 2000
 :PROPERTIES:
 :Custom_ID: Dowek2000
 :END:
-*** Dowek, Hardin \& Kirchner
-*** Information and Computation, 2000
+*** [quote pending approval]					    :rec@NAD:
 *** Better than it sounds 					 :talk@xplat:
     This is a good example of a fantastic result getting buried under a
     blah abstract.  The original abstract makes this sound like an
@@ -34,11 +79,12 @@
       Huet.  We also show a more efficient strategy for producing the same
       solutions using intermediate steps which can only be represented due
       to the use of explicit substitutions in the term representation.
-* Secret emacs settings
+* SECRET EMACS SETTINGS					      :administrivia:
 # Local Variables:
 # eval: (reftex-mode)
 # reftex-default-bibliography: ("readings.bib")
+# reftex-cite-punctuation: (", " " & " " et al.")
 # reftex-cite-format: ((?b . "[[bib:%l][%l-bib]]") (?n . "[[notes:%l][%l-notes]]")
 #   (?p . "[[papers:%l][%l-paper]]") (?t . "%t")
-#   (?h . "** [[bib:%l][%t]]\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n*** %a\n*** %j, %y\n"))
+#   (?h . "** [[bib:%l][%t]]\n   - %a\n   - %j, %b %s, %y\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n"))
 # End:
