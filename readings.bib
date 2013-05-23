@@ -1,0 +1,697 @@
+% This file was created with JabRef 2.5.
+% Encoding: UTF8
+
+@ARTICLE{Abel2012,
+  author = {Abel, Andreas},
+  title = {Type-Based Termination, Inflationary Fixed-Points, and Mixed Inductive-Coinductive
+	Types},
+  journal = {FICS},
+  year = {2012},
+  abstract = {Type systems certify program properties in a compositional way. From
+	a bigger program one can abstract out a part and certify the properties
+	of the resulting abstract program by just using the type of the part
+	that was abstracted away. Termination and productivity are non-trivial
+	yet desired program properties, and several type systems have been
+	put forward that guarantee termination, compositionally. These type
+	systems are intimately connected to the definition of least and greatest
+	fixed-points by ordinal iteration. While most type systems use “conventional”
+	iteration, we consider inflationary iteration in this article. We
+	demonstrate how this leads to a more principled type system, with
+	recursion based on well-founded induction. The type system has a
+	prototypical implementation, MiniAgda, and we show in particular
+	how it certifies productivity of corecursive and mixed recursive-corecursive
+	functions.},
+  file = {:fics12.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Abel2010,
+  author = {Andreas Abel and Brigitte Pientka},
+  title = {Explicit Substitutions for Contextual Type Theory},
+  journal = {EPTCS},
+  year = {2010},
+  volume = {34,},
+  pages = {2010,pp.5-20},
+  month = sep,
+  abstract = {In this paper, we present an explicit substitution calculus which
+	distinguishes between ordinary bound variables and meta-variables.
+	Its typing discipline is derived from contextual modal type theory.
+	We first present a dependently typed lambda calculus with explicit
+	substitutions for ordinary variables and explicit meta-substitutions
+	for meta-variables. We then present a weak head normalization procedure
+	which performs both substitutions lazily and in a single pass thereby
+	combining substitution walks for the two different classes of variables.
+	Finally, we describe a bidirectional type checking algorithm which
+	uses weak head normalization and prove soundness.},
+  comments = {In Proceedings LFMTP 2010, arXiv:1009.2189},
+  eprint = {1009.2789},
+  file = {:1009.2789.pdf:PDF},
+  oai2identifier = {1009.2789},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Balabonski2012,
+  author = {Balabonski, Thibaut},
+  title = {[hal-00637048, v1] A Unified Approach to Fully Lazy Sharing},
+  journal = {ACM SIGPLAN Notices},
+  year = {2012},
+  abstract = {Computer Science/Formal Languages and Automata Theory},
+  file = {:Balabonski-FullyLazySharing-Long.pdf:PDF},
+  keywords = {},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Benaissa1995,
+  author = {Benaissa, Zine-El-Abidine and Briaud, Daniel and Lescanne, Pierre
+	and Rouyer-Degli, Jocelyne},
+  title = {λυ, a calculus of explicit substitutions which preserves strong normalisation},
+  year = {1995},
+  abstract = {Explicit substitutions were proposed by Abadi, Cardelli, Curien, Hardin
+	and Lévy to internalise substitutions into λ-calculus and to propose
+	a mechanism for computing on substitutions.  λυ is another view of
+	the same concept which aims to explain the process of substitution
+	and to decompose it in small steps.  It favours simplicity and preservation
+	of strong normalisation.  This way, another important property is
+	missed, namely confluence on open terms.  In spirit, λυ is closely
+	related to another calculus of explicit substitutions proposed by
+	de Bruijn and called Cλξϕ.  In this paper, we introduce λυ, we present
+	Cλξϕ in the same framework as λυ and we compare both calculi.  Moreover,
+	we prove properties of λυ; namely λυ correctly implements β reduction,
+	λυ is confluent on closed terms, i.e., on terms of classical λ-calculus
+	and on all terms that are derived from those terms, and finally λυ
+	preserves strong normalisation in the following sense: strongly β
+	normalising terms are strongly λυ normalising.},
+  file = {:PSN.PS.gz:PostScript},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@TECHREPORT{Benaissa1996,
+  author = {Benaissa, Zine-El-Abidine and Lescanne, Pierre and Rose, Kristoffer
+	H.},
+  title = {Modeling Sharing and Recursion for Weak Reduction Strategies using
+	Explicit Substitution},
+  institution = {BRICS},
+  year = {1996},
+  file = {:BRICS-RS-96-56.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Dowek2000,
+  author = {Dowek, Gilles and Hardin, Thérèse and Kirchner, Claude},
+  title = {Higher Order Unification via Explicit Substitutions},
+  journal = {Information and Computation},
+  year = {2000},
+  abstract = {Higher order unification is equational unification for βη-conversion.
+	 But it is not first order equational unification, as substitution
+	has to avoid capture.  Thus the methods for equational unification
+	(such as narrowing) built upon grafting (i.e. substitution without
+	renaming), cannot be used for higher order unification, which needs
+	specific algorithms.  Our goal in this paper is to reduce higher
+	order unification to first order equational unification in a suitable
+	theory.
+	
+	
+	This is achieved by replacing substitution by grafting, but this replacement
+	is not straightforward as it raises two major problems.  First, some
+	unification problems have solutions with grafting but no solution
+	with substitution.  Then equational unification algorithms rest upon
+	the fact that grafting and reducation commute.  But grafting and
+	βη-reduction do not commute in λ-calculus and reducing an equation
+	may change the set of its solutions.  This difficulty comes from
+	the interaction between the substitutions initiated by βη-reduction
+	and the ones initiated by the unification process.  Two kinds of
+	variables are involved: those of βη-conversion and those of unification.
+	 So, we need to set up a calculus which distinguishes these two kinds
+	of variables and such that reduction and grafting commute.  For this
+	purpose, the application of a substitution of a reduction variable
+	to a unification one must be delayed until this variable is instantiated.
+	 Such a separation and delay are provided by a calculus of explicit
+	substitutions.  Unification in such a calculus can be performed by
+	well-known algorithms such as narrowing, but we present a specialised
+	algorithm for greater efficiency.  At last we show how to relate
+	unification in λ-calculus and in a calculus with explicit substitutions.
+	
+	
+	Thus we come up with a new higher order unification algorithm which
+	eliminates some burdens of the previous algorithms, in particular
+	the functional handling of scopes.  Huet's algorithm can be seen
+	as a specific strategy for our algorithm, since each of its steps
+	can be decomposed into elementary ones, leading to a more atomic
+	description of the unification process.   Also, solved forms in λ-calculus
+	can easily be computed from solved forms in λσ-calculus.},
+  file = {:higher_order_unification_via_explicit_substitutions.pdf:PDF},
+  keywords = {Explicit substitutions, higher order unification, equational unification},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@TECHREPORT{Dowek1998,
+  author = {Dowek, Gilles and Hardin, Thérèse and Kirchner, Claude and Pfenning,
+	Frank},
+  title = {Unification via Explicit Substitutions: The Case of Higher-Order
+	Patterns},
+  institution = {INRIA},
+  year = {1998},
+  number = {3591},
+  month = {Dec},
+  abstract = {In [6] we have proposed a general higher-order unification method
+	using a theory of explicit substitutions and we have proved its completeness.
+	 In this paper, we investigate the case of higher-order patterns
+	as introduced by Miller.  We show that our general algorithm specializes
+	in a very convenient way to patterns.  We also sketch an efficient
+	implementation of the abstract algorithm and its generalization to
+	constraint simplification, which has yielded good experimental results
+	at the core of a higher-order constraint logic programming language.},
+  file = {:RR-3591.pdf:PDF},
+  keywords = {Explicit substitutions, higher order unification, pattern unification,
+	constraint simplification, higher-order programming},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Fischer2007,
+  author = {Fischer, Sebastian and Silva, Josep and Tamarit, Salvador and Vidal,
+	Germ ́n},
+  title = {Preserving Sharing in the Partial Evaluation of Lazy Functional Programs},
+  year = {2007},
+  abstract = {The goal of partial evaluation is the specialization of programs w.r.t.
+	part of their input data. Although this technique is already well-known
+	in the context of functional languages, current approaches are either
+	overly restrictive or destroy sharing through the specialization
+	process, which is unacceptable from a performance point of view.
+	In this work, we present the basis of a new partial evaluation scheme
+	for first-order lazy functional programs that preserves sharing through
+	the specialization process and still allows the unfolding of arbitrary
+	function calls.},
+  file = {:lopstr07.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Forest,
+  author = {Forest, Julien},
+  title = {Evaluation Strategies for Calculi with Explicit Pattern Matching
+	and Substitutions},
+  file = {:forest-final.ps:PostScript},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@MASTERSTHESIS{Gacek2007a,
+  author = {Andrew Gacek},
+  title = {The Suspension Calculus and its Relationship to Other Explicit Treatments
+	of Substitution in Lambda Calculi},
+  year = {2007},
+  file = {:2007_05.pdf:PDF},
+  keywords = {},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Gacek2007,
+  author = {Gacek, Andrew and Nadathur, Gopalan},
+  title = {A Simplified Suspension Calculus and its Relationship to Other Explicit
+	Substitution Calculi},
+  year = {2007},
+  abstract = {This paper concerns the explicit treatment of substitutions in the
+	lambda calculus. One of its contributions is the simplification and
+	rationalization of the suspension calculus that embodies such a treatment.
+	The earlier version of this calculus provides a cumbersome encoding
+	of substitution composition, an operation that is important to the
+	efficient realization of reduction. This encoding is simplified here,
+	resulting in a treatment that is easy to use directly in applications.
+	The rationalization consists of the elimination of a practically
+	inconsequential flexibility in the unravelling of substitutions that
+	has the inadvertent side effect of losing contextual information
+	in terms; the modified calculus now has a structure that naturally
+	supports logical analyses, such as ones related to the assignment
+	of types, over lambda terms. The overall calculus is shown to have
+	pleasing theoretical properties such as a strongly terminating sub-calculus
+	for substitution and confluence even in the presence of term meta
+	variables that are accorded a grafting interpretation. Another contribution
+	of the paper is the identification of a broad set of properties that
+	are desirable for explicit substitution calculi to support and a
+	classification of a variety of proposed systems based on these. The
+	suspension calculus is used as a tool in this study. In particular,
+	mappings are described between it and the other calculi towards understanding
+	the characteristics of the latter.},
+  file = {:suspension-calculus.pdf:PDF},
+  keywords = {Languages, Theory; Lambda calculus, explicit substitutions, term rewriting,
+	
+	higher-order abstract syntax, metalanguages},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Ghani2006,
+  author = {Ghani, Neil and Hamana, Makoto and Uustalu, Tarmo},
+  title = {Explicit Substitutions and Higher-Order Syntax},
+  year = {2006},
+  abstract = {Recently there has been a great deal of interest in higher-order syntax
+	which seeks to extend standard initial algebra semantics to cover
+	languages with variable binding. The canonical example studied in
+	the literature is that of the untyped λ-calculus which is handled
+	as an instance of the general theory of binding algebras, cf. Fiore,
+	Plotkin, Turi [13].
+	
+	Another important syntactic construction is that of explicit substitutions
+	which are used to model local definitions and to implement reduction
+	in the λ-calculus. The syntax of a language with explicit substitutions
+	does not form a binding algebra as an explicit substitution may bind
+	an arbitrary number of variables. Thus explicit substitutions are
+	a natural test case for the further development of the theory and
+	applications of syntax with variable binding.
+	
+	This paper shows that a language containing explicit substitutions
+	and a first-order signature Σ is naturally modelled as the initial
+	algebra of the Id + F_{Σ} ◦_ + _◦_ endofunctor. We derive a similar
+	formula for adding explicit substitutions to the untyped λ-calculus
+	and then show these initial algebras provide useful datatypes for
+	manipulating abstract syntax by implementing two reduction machines.
+	We also comment on the apparent lack of modularity in syntax with
+	variable binding as compared to first-order languages.},
+  file = {:merlin03-hosc.pdf:PDF},
+  keywords = {abstract syntax, variable binding, explicit substitutions, algebras,
+	monads},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@CONFERENCE{Gill2009,
+  author = {Gill, Andy},
+  title = {Type-Safe Observable Sharing in Haskell},
+  booktitle = {Haskell'09},
+  year = {2009},
+  publisher = {ACM},
+  abstract = {Haskell is a great language for writing and supporting embedded Domain
+	Specific Languages (DSLs). Some form of observable sharing is often
+	a critical capability for allowing so-called deep DSLs to be compiled
+	and processed. In this paper, we describe and explore uses of an
+	IO function for reification which allows direct observation of sharing.},
+  file = {:reifyGraph.pdf:PDF},
+  keywords = {Design, Languages, Observable Sharing, DSL Compilation},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Gundry2012,
+  author = {Gundry, Adam and McBride, Conor},
+  title = {A tutorial implementation of dynamic pattern unification (DRAFT)},
+  year = {2012},
+  abstract = {A higher-order unification algorithm is an essential component of
+	a dependently typed programming language implementation, and understanding
+	its capabilities is important if dependently typed programmers are
+	to become productive. Miller showed that, for simply typed λ-terms
+	in the pattern fragment (where metavariables are applied to spines
+	of distinct bound variables), unification is decidable and most general
+	unifiers exist. We describe an algorithm for pattern unification
+	in a full-spectrum dependent
+	
+	type theory with dependent pairs (Σ-types). The algorithm exploits
+	heterogeneous equality and a novel concept of ‘twin’ free variables
+	to handle dependency. Moreover, it supports dynamic management of
+	constraints, postponing equations that fall outside the pattern fragment
+	in case other equations make them simpler. We aim to make sense both
+	to language implementors and users, and to this end present our algorithm
+	as a Haskell program.},
+  file = {Haskell source code:pattern-unification-2012-07-10.tar.gz:Text;:pattern-unification-2012-07-10.pdf:PDF},
+  keywords = {Algorithms, Languages, Theory, Dependent types, higher-order unification},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Lang2007,
+  author = {Lang, Frédéric},
+  title = {[inria-00198756, v1] Explaining the lazy Krivine machine using explicit
+	substitution and addresses},
+  journal = {HOSC},
+  year = {2007},
+  abstract = {In a previous paper, Benaissa, Lescanne, and Rose, have extended the
+	weak lambda-calculus of explicit substitution λσ_{w} with addresses,
+	so that it gives an account of the sharing implemented by lazy functional
+	language interpreters. We show in this paper that their calculus,
+	called λσ^{a}_{w} , fits well to the lazy Krivine machine, which
+	describes the core of a lazy (call-by-need) functional programming
+	language implementation. The lazy Krivine machine implements term
+	evaluation sharing, that is essential for efficiency of such languages.
+	The originality of our proof is that it gives a very detailed account
+	of the implemented strategy.},
+  file = {:Lang-07.pdf:PDF},
+  keywords = {},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Launchbury1993,
+  author = {Launchbury, John},
+  title = {A Natural Semantics for Lazy Evaluation},
+  year = {1993},
+  abstract = {We define an operational semantics for lazy evaluation which provides
+	an accurate model for sharing.  The only computational structure
+	we introduce is a set of bindings which corresponds closely to a
+	heap.  The semantics is set at a considerably higher level of abstraction
+	than operational semantics for particular abstract machines, so is
+	more suitable for a variety of proofs.  Furthermore, because a heap
+	is explicitly modelled, the semantics provides a suitable framework
+	for studies about space behaviour of terms under lazy evaluation.},
+  file = {:launchbury.ps.gz:PostScript},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Launchbury1993a,
+  author = {Launchbury, John and Gill, Andy and Hughes, John and Marlow, Simon
+	and Peyton Jones, Simon and Wadler, Philip},
+  title = {Avoiding Unnecessary Updates},
+  year = {1993},
+  file = {:avoiding-updates.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@ARTICLE{Liang2004,
+  author = {Liang, Chuck and Nadathur, Gopalan and Qi, Xiaochu},
+  title = {Choices in Representation and Reduction Strategies for Lambda Terms
+	in Intensional Contexts},
+  journal = {Journal of Automated Reasoning},
+  year = {2004},
+  abstract = {Higher-order representations of objects such as programs, proofs,
+	formulas and types have become important to many symbolic computation
+	tasks. Systems that support such representations usually depend on
+	the implementation of an intensional view of the terms of some variant
+	of the typed lambda calculus. New notations have been proposed for
+	the lambda calculus that provide an excellent basis for realizing
+	such implementations. There are, however, several choices in the
+	actual deployment of these notations the practical consequences of
+	which are not currently well understood. We attempt to develop such
+	an understanding here by examining the impact on performance of different
+	combinations of the features afforded by such notations. Amongst
+	the facets examined are the treatment of bound variables, eagerness
+	and laziness in substitution and reduction, the ability to merge
+	different structure traversals into one and the virtues of annotations
+	on terms that indicate their dependence on variables bound by external
+	abstractions. We complement qualitative assessments with experiments
+	conducted by executing programs in a language that supports an intensional
+	view of lambda terms while varying relevant aspects of the implementation
+	of the language. Our study provides insights into the preferred approaches
+	to representing and reducing lambda terms and also exposes characteristics
+	of computations that have a somewhat unanticipated effect on performance.},
+  file = {:termrep.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Loeh2010,
+  author = {Löh, Andres and McBride, Conor and Swierstra, Wouter},
+  title = {A Tutorial Implementation of a Dependently Typed Lambda Calculus},
+  journal = {Fundamenta Informaticae},
+  year = {2010},
+  volume = {102},
+  pages = {177--207},
+  number = {2},
+  month = jan,
+  __markedentry = {[james]},
+  abstract = {We present the type rules for a dependently typed core calculus together
+	with a straight-forward implementation in Haskell. We explicitly
+	highlight the changes necessary to shift from a simply-typed lambda
+	calculus to the dependently typed lambda calculus. We also describe
+	how to extend our core language with data types and write several
+	small example programs. The article is accompanied by an executable
+	interpreter and example code that allows immediate experimentation
+	with the system we describe.},
+  doi = {10.3233/FI-2010-304},
+  file = {:LambdaPi.pdf:PDF;Haskell source code for interpreter, extracted from article source:LambdaPi.hs:Text;LambdaPi standard prelude:prelude.lp:Text;instructions for using the LambdaPi interpreter:LambdaPi-README.txt:Text},
+  owner = {james},
+  timestamp = {2013.05.22},
+  url = {http://www.andres-loeh.de/LambdaPi/}
+}
+
+@ARTICLE{Maraist1998,
+  author = {Maraist, John and Odersky, Martin and Wadler, Philip},
+  title = {The Call-by-Need Lambda Calculus},
+  journal = {JFP},
+  year = {1998},
+  volume = {8},
+  number = {3},
+  month = {May},
+  abstract = {We present a calculus that captures the operational semantics of call-by-need.
+	 The call-by-need lambda calculus is confluent, has a notion of standard
+	reduction, and entails the same observational equivalence relation
+	as the call-by-name calculus.  The system can be formulated with
+	or without explicit let bindings, admits useful notions of marking
+	and developments, and has a straightforward operational interpretation.},
+  file = {:JFP98.ps.gz:PostScript},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@PHDTHESIS{Norell2007,
+  author = {Norell, Ulf},
+  title = {Towards a practical programming language based on dependent type
+	theory},
+  school = {Chalmers University of Technology and Göteborg University},
+  year = {2007},
+  abstract = {Dependent type theories [ML72] have a long history of being used for
+	theorem proving. One aspect of type theory which makes it very powerful
+	as a proof language is that it mixes deduction with computation.
+	This also makes type theory a good candidate for programming—the
+	strength of the type system allows properties of programs to be stated
+	and established, and the computational properties provide semantics
+	for the programs.
+	
+	
+	This thesis is concerned with bridging the gap between the theoretical
+	presentations of type theory and the requirements on a practical
+	programming language. Although there are many challenging research
+	problems left to solve before we have an industrial scale programming
+	language based on type theory, this thesis takes us a good step along
+	the way.
+	
+	
+	In functional programming languages pattern matching provides a concise
+	notation for defining functions. In dependent type theory, pattern
+	matching becomes even more powerful, in that inspecting the value
+	of a particular term can reveal information about the types and values
+	of other terms. In this thesis we give a type checking algorithm
+	for definitions by pattern matching in type theory, supporting overlapping
+	patterns, and pattern matching on intermediate results using the
+	with rule [MM04a].
+	
+	
+	Traditional presentations of type theory suffers from rather verbose
+	notation, cluttering programs and proofs with, for instance, explicit
+	type information. One solution to this problem is to allow terms
+	that can be inferred automatically to be omitted. This is usually
+	implemented by inserting metavariables in place of the omitted terms
+	and using unification to solve these metavariables during type checking.
+	We present a type checking algorithm for a theory with metavariables
+	and prove its soundness independent of whether the metavariables
+	are solved or not.
+	
+	
+	In any programming language it is important to be able to structure
+	large programs into separate units or modules and limit the interaction
+	between these modules. In this thesis we present a simple, but powerful
+	module system for a dependently typed language. The main focus of
+	the module system is to manage the name space of a program, and an
+	important characteristic is a clear separation between the module
+	system and the type checker, making it largely independent of the
+	underlying language.
+	
+	
+	As a side track, not directly related to the use of type theory for
+	programming, we present a connection between type theory and a first-order
+	logic theorem prover. This connection saves the user the burden of
+	proving simple, but tedious first-order theorems by leaving them
+	for the prover. We use a transparent translation to first-order logic
+	which makes the proofs constructed by the theorem prover human readable.
+	The soundness of the connection is established by a general metatheorem.
+	
+	
+	Finally we put our work into practise in the implementation of a programming
+	language, Agda, based on type theory. As an illustrating example
+	we show how to program a simple certified prover for equations in
+	a commutative monoid, which can be used internally in Agda. Much
+	more impressive examples have been done by others, showing that the
+	ideas developed in this thesis are viable in practise.},
+  file = {:Ulf_Norrell-thesis.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@TECHREPORT{Rose1993,
+  author = {Rose, Kristoffer Høgsbro},
+  title = {Explicit Cyclic Substitutions},
+  institution = {DIKU},
+  year = {1993},
+  number = {D-143},
+  abstract = {In this paper we consider rewrite systems that describe the λ-calculus
+	enriched with recursive and non-recursive local definitions by generalizing
+	the ‘explicit substitutions’ used by Abadi, Cardelli, Curien, and
+	Lévy [1] to describe sharing in λ-terms.  This leads to ‘explicit
+	cyclic substitutions’ that can describe the mutual sharing of local
+	recursive definitions.  We demonstrate how this may be used to describe
+	standard binding constructions (let and letrec)--directly using substitution
+	and fixed point induction as well as using ‘small step’ rewriting
+	semantics where substitution is interleaved with the mechanics of
+	the following β-reductions.
+	
+	
+	With this we hope to contribute to the synthesis of denotational and
+	operational specifications of sharing and recursion.},
+  file = {:rose-ctrs92.ps.gz:PostScript},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@INPROCEEDINGS{Shao1998,
+  author = {Shao, Zhong and League, Christopher and Monnier, Stefan},
+  title = {Implementing Typed Intermediate Languages},
+  booktitle = {ICFP},
+  year = {1998},
+  organization = {ACM},
+  abstract = {Recent advances in compiler technology have demonstrated the benefits
+	of using strongly typed intermediate languages to compile richly
+	typed source languages (e.g., ML).  A type-preserving compiler can
+	use types to guide advanced optimizations and to help generate provably
+	secure mobile code.  Types, unfortunately, are very hard to represent
+	and manipulate efficiently; a naive implementation can easily add
+	exponential overhead to the compilation and execution of a program.
+	 This paper describes our experience with implementing the FLINT
+	typed intermediate language in the SML/NJ production compiler.  We
+	observe that a type-preserving compiler will not scale to handle
+	large types unless all of its type-preserving stages preserve the
+	asymptotic time and space usage in representing and manipulating
+	types.  We present a series of novel techniques for achieving this
+	property and give empirical evidence of their effectiveness.},
+  file = {:imp.ps.gz:PostScript},
+  owner = {james},
+  timestamp = {2013.05.21}
+}
+
+@INPROCEEDINGS{Sinot2007,
+  author = {Sinot, Francois-Régis},
+  title = {Complete Laziness},
+  booktitle = {The 7th International Workshop on Reduction Strategies in Rewriting
+	and Programming},
+  year = {2007},
+  editor = {Giesl, Jürgen},
+  pages = {120-124},
+  abstract = {Lazy evaluation (or call-by-need) is widely used and well understood,
+	partly thanks to a clear operational semantics given by Launchbury.
+	However, modern non-strict functional languages do not use plain
+	call-by-need evaluation: they also use optimisations like fully lazy
+	λ-lifting or partial evaluation. To ease reasoning, it would be nice
+	to have all these features in a uniform setting. In this paper, we
+	generalise Launchbury's semantics in order to capture complete laziness,
+	as coined by Holst and Gomard in 1991, which is slightly more than
+	fully lazy sharing, and closer to on-the-y needed partial evaluation.
+	This gives a clear, formal and implementation-independent operational
+	semantics to completely lazy evaluation, in a natural (or big-step)
+	style similar to Launchbury's. Surprisingly, this requires sharing
+	not only terms, but also contexts, a property which was thought to
+	characterise optimal reduction.},
+  file = {:WRSproceedings.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@MISC{Sinot_anatural,
+  author = {Sinot, François-régis},
+  title = {A Natural Semantics for Completely Lazy Evaluation},
+  year = {2007},
+  abstract = {Lazy evaluation (or call-by-need) is widely used and well understood,
+	partly thanks to a clear operational semantics given by Launchbury.
+	However, modern non-strict functional languages do not use plain
+	call-by-need evaluation: they also use optimisations like fully lazy
+	λ-lifting or partial evaluation. To ease reasoning, it would be nice
+	to have all these features in a uniform setting. In this paper, we
+	generalise Launchbury’s semantics in order to capture “complete laziness”,
+	as coined by Holst and Gomard in 1991, which is slightly more than
+	fully lazy sharing, and closer to on-the-fly needed partial evaluation.
+	This gives a clear, formal and implementation-independent operational
+	semantics to completely lazy evaluation, in a natural (or big-step)
+	style similar to Launchbury’s. Surprisingly, this requires to share
+	not only terms, but also contexts, a property which was thought to
+	characterise optimal reduction.},
+  doi = {10.1.1.99.5098},
+  file = {:10.1.1.99.5098.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@ARTICLE{Soerensen1994,
+  author = {Sørensen, Morten Heine and Glück, Robert and Jones, Neil D.},
+  title = {Towards Unifying Partial Evaluation, Deforestation, Supercompilation,
+	and GPC},
+  year = {1994},
+  abstract = {We study four transformation methodologies which are automatic instances
+	of Burstall and Darlington's fold/unfold framework: partial evaluation,
+	deforestation, supercompilation, and generalized partial computation
+	(GPC).  One can classify these and other fold/unfold based transformers
+	by how much information they maintain during transformation.
+	
+	
+	We introduce the positive supercompiler, a version of deforestation
+	including more information propagation, to study such a classification
+	in detail.  Via the study of positive supercompilation, we are able
+	to show that partial evaluation and deforestation have simple information
+	propagation, positive supercompilation has more information propagation,
+	and supercompilation and GPC have even more information propagation.
+	 The amount of information propagation is significant: positive supercompilation,
+	GPC, and supercompilation can specialize a general pattern matcher
+	to a fixed pattern so as to obtain efficient output similar to that
+	of the Knuth-Morris-Pratt algorithm.  In the case of partial evaluation
+	and deforestation, the general matcher must be rewritten to achieve
+	this.},
+  doi = {10.1.1.36.2695},
+  file = {:10.1.1.36.2695.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@PHDTHESIS{Thyer1999,
+  author = {Thyer, Michael Jonathan},
+  title = {Lazy Specialization},
+  school = {University of York},
+  year = {1999},
+  month = {Sep},
+  abstract = {This thesis describes a scheme to combine the benefits of lazy evaluation
+	with partial evaluation. By performing specializations only when
+	needed (lazily), the specialize-residualize decision is changed from
+	being semantic to operational. It is demonstrated that a completely
+	lazy evaluator is capable of eliminating towers of interpreters.
+	The scheme is generalised, devising a new implementation of optimal
+	evaluation, and it is demonstrated that optimal evaluators do not
+	eliminate towers of interpreters.
+	
+	
+	It is argued that the concept of scope has too often been overlooked
+	in the lambda-calculus. A new system of depths is introduced in order
+	handle the issue of scope. The new approach leads to a much richer
+	understanding of the issue of sharing in the lambda-calculus. Although
+	optimal evaluators are well known, it is argued that less well understood
+	degrees of sharing, in between the sharing of conventional functional
+	languages and optimal evaluators, are of more practical use. A new
+	classification of possible function body reduction strategies is
+	shown to be analogous and orthogonal to argument reduction strategies.},
+  file = {:thesis-thyer.pdf:PDF},
+  owner = {james},
+  timestamp = {2013.05.22}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: fileDirectory:readings;}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+
