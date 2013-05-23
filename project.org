@@ -1,0 +1,44 @@
+#+title: TinyAgda project notes
+#+LINK: bib file:readings.bib::%s
+#+LINK: notes file:project.org::#%s
+* Reading list
+** [[bib:Dowek2000][Higher Order Unification via Explicit Substitutions]]
+:PROPERTIES:
+:Custom_ID: Dowek2000
+:END:
+*** Dowek, Hardin \& Kirchner
+*** Information and Computation, 2000
+*** Better than it sounds 					 :talk@xplat:
+    This is a good example of a fantastic result getting buried under a
+    blah abstract.  The original abstract makes this sound like an
+    uninsightful trick for reusing algorithms.  But if you actually
+    understand it, it'll change the way you look at higher-order unification
+    forever.  My fantasy abstract:
+
+      The literature on higher-order unification has long been plagued by
+      a persistent confusion between the object variables of λ-calculus
+      terms and the metavariables of equational unification.  By separating
+      these two kinds of variables into two syntactic classes and treating
+      each appropriately, tricky 'higher-order unification' problems
+      may be treated as much tamer instances of 'first-order unification over
+      a higher-order equational theory'.
+
+      Using a simple and reversible translation of the λ-calculus into the
+      λσ-calculus, a calculus of explicit substitutions which already
+      contains appropriate representations and simplification rules for
+      terms containing metavariables, we present a narrowing calculus to
+      efficiently solve higher-order unification problems using only
+      well-known first-order optimization techniques.  We show faithfulness
+      and adequacy of our translation and demonstrate that our narrowing
+      calculus can simulate the specialized pre-unification algorithm of
+      Huet.  We also show a more efficient strategy for producing the same
+      solutions using intermediate steps which can only be represented due
+      to the use of explicit substitutions in the term representation.
+* Secret emacs settings
+# Local Variables:
+# eval: (reftex-mode)
+# reftex-default-bibliography: ("readings.bib")
+# reftex-cite-format: ((?b . "[[bib:%l][%l-bib]]") (?n . "[[notes:%l][%l-notes]]")
+#   (?p . "[[papers:%l][%l-paper]]") (?t . "%t")
+#   (?h . "** [[bib:%l][%t]]\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n*** %a\n*** %j, %y\n"))
+# End:
