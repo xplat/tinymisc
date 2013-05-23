@@ -57,9 +57,19 @@
   title = {[hal-00637048, v1] A Unified Approach to Fully Lazy Sharing},
   journal = {ACM SIGPLAN Notices},
   year = {2012},
-  abstract = {Computer Science/Formal Languages and Automata Theory},
+  abstract = {We give an axiomatic presentation of sharing-via-labelling for weak
+	λ-calculi, that allows to formally compare many different approaches
+	to fully lazy sharing, and obtain two important results. We prove
+	that the known implementations of full laziness are all equivalent
+	in terms of the number of β-reductions performed, although they behave
+	differently regarding the duplication of terms. We establish a link
+	between the optimality theories of weak λ-calculi and first-order
+	rewriting systems by expressing fully lazy λ-lifting in our framework,
+	thus emphasizing the first-order essence of weak reduction.
+	
+	
+	This technical report extends [Bal12] with comprehensive proofs.},
   file = {:Balabonski-FullyLazySharing-Long.pdf:PDF},
-  keywords = {},
   owner = {james},
   timestamp = {2013.05.21}
 }
@@ -71,14 +81,14 @@
   year = {1995},
   abstract = {Explicit substitutions were proposed by Abadi, Cardelli, Curien, Hardin
 	and Lévy to internalise substitutions into λ-calculus and to propose
-	a mechanism for computing on substitutions.  λυ is another view of
+	a mechanism for computing on substitutions. λυ is another view of
 	the same concept which aims to explain the process of substitution
-	and to decompose it in small steps.  It favours simplicity and preservation
-	of strong normalisation.  This way, another important property is
-	missed, namely confluence on open terms.  In spirit, λυ is closely
+	and to decompose it in small steps. It favours simplicity and preservation
+	of strong normalisation. This way, another important property is
+	missed, namely confluence on open terms. In spirit, λυ is closely
 	related to another calculus of explicit substitutions proposed by
-	de Bruijn and called Cλξϕ.  In this paper, we introduce λυ, we present
-	Cλξϕ in the same framework as λυ and we compare both calculi.  Moreover,
+	de Bruijn and called Cλξϕ. In this paper, we introduce λυ, we present
+	Cλξϕ in the same framework as λυ and we compare both calculi. Moreover,
 	we prove properties of λυ; namely λυ correctly implements β reduction,
 	λυ is confluent on closed terms, i.e., on terms of classical λ-calculus
 	and on all terms that are derived from those terms, and finally λυ
@@ -96,7 +106,33 @@
 	Explicit Substitution},
   institution = {BRICS},
   year = {1996},
+  abstract = {We present the λσ_{w} -calculus, a formal synthesis of the concepts
+	of sharing and explicit substitution for weak reduction. We show
+	how λσ_{w} can be used as a foundation of implementations of functional
+	programming languages by modeling the essential ingredients of such
+	implementations, namely weak reduction strategies, recursion, space
+	leaks, recursive data structures, and parallel evaluation, in a uniform
+	way.
+	
+	
+	First, we give a precise account of the major reduction strategies
+	used in functional programming and the consequences of choosing λ-graph-reduction
+	vs. environment-based evaluation. Second, we show how to add constructors
+	and explicit recursion to give a precise account of recursive functions
+	and data structures even with respect to space complexity. Third,
+	we formalize the notion of space leaks in λσ_{w} and use this to
+	define a space leak free calculus; this suggests optimisations for
+	call-by-need reduction that prevent space leaking and enables us
+	to prove that the “trimming” performed by the STG machine does not
+	leak space.
+	
+	
+	In summary we give a formal account of several implementation techniques
+	used by state of the art implementations of functional programming
+	languages.},
   file = {:BRICS-RS-96-56.pdf:PDF},
+  keywords = {Implementation of functional programming, lambda calculus, weak reduction,
+	explicit substitution, sharing, recursion, space leaks},
   owner = {james},
   timestamp = {2013.05.21}
 }
@@ -107,43 +143,42 @@
   journal = {Information and Computation},
   year = {2000},
   abstract = {Higher order unification is equational unification for βη-conversion.
-	 But it is not first order equational unification, as substitution
-	has to avoid capture.  Thus the methods for equational unification
+	But it is not first order equational unification, as substitution
+	has to avoid capture. Thus the methods for equational unification
 	(such as narrowing) built upon grafting (i.e. substitution without
 	renaming), cannot be used for higher order unification, which needs
-	specific algorithms.  Our goal in this paper is to reduce higher
-	order unification to first order equational unification in a suitable
-	theory.
+	specific algorithms. Our goal in this paper is to reduce higher order
+	unification to first order equational unification in a suitable theory.
 	
 	
 	This is achieved by replacing substitution by grafting, but this replacement
-	is not straightforward as it raises two major problems.  First, some
+	is not straightforward as it raises two major problems. First, some
 	unification problems have solutions with grafting but no solution
-	with substitution.  Then equational unification algorithms rest upon
-	the fact that grafting and reducation commute.  But grafting and
-	βη-reduction do not commute in λ-calculus and reducing an equation
-	may change the set of its solutions.  This difficulty comes from
-	the interaction between the substitutions initiated by βη-reduction
-	and the ones initiated by the unification process.  Two kinds of
-	variables are involved: those of βη-conversion and those of unification.
-	 So, we need to set up a calculus which distinguishes these two kinds
-	of variables and such that reduction and grafting commute.  For this
+	with substitution. Then equational unification algorithms rest upon
+	the fact that grafting and reducation commute. But grafting and βη-reduction
+	do not commute in λ-calculus and reducing an equation may change
+	the set of its solutions. This difficulty comes from the interaction
+	between the substitutions initiated by βη-reduction and the ones
+	initiated by the unification process. Two kinds of variables are
+	involved: those of βη-conversion and those of unification. So, we
+	need to set up a calculus which distinguishes these two kinds of
+	variables and such that reduction and grafting commute. For this
 	purpose, the application of a substitution of a reduction variable
 	to a unification one must be delayed until this variable is instantiated.
-	 Such a separation and delay are provided by a calculus of explicit
-	substitutions.  Unification in such a calculus can be performed by
+	Such a separation and delay are provided by a calculus of explicit
+	substitutions. Unification in such a calculus can be performed by
 	well-known algorithms such as narrowing, but we present a specialised
-	algorithm for greater efficiency.  At last we show how to relate
-	unification in λ-calculus and in a calculus with explicit substitutions.
+	algorithm for greater efficiency. At last we show how to relate unification
+	in λ-calculus and in a calculus with explicit substitutions.
 	
 	
 	Thus we come up with a new higher order unification algorithm which
 	eliminates some burdens of the previous algorithms, in particular
-	the functional handling of scopes.  Huet's algorithm can be seen
-	as a specific strategy for our algorithm, since each of its steps
-	can be decomposed into elementary ones, leading to a more atomic
-	description of the unification process.   Also, solved forms in λ-calculus
-	can easily be computed from solved forms in λσ-calculus.},
+	the functional handling of scopes. Huet's algorithm can be seen as
+	a specific strategy for our algorithm, since each of its steps can
+	be decomposed into elementary ones, leading to a more atomic description
+	of the unification process. Also, solved forms in λ-calculus can
+	easily be computed from solved forms in λσ-calculus.},
   file = {:higher_order_unification_via_explicit_substitutions.pdf:PDF},
   keywords = {Explicit substitutions, higher order unification, equational unification},
   owner = {james},
@@ -161,9 +196,9 @@
   month = {Dec},
   abstract = {In [6] we have proposed a general higher-order unification method
 	using a theory of explicit substitutions and we have proved its completeness.
-	 In this paper, we investigate the case of higher-order patterns
-	as introduced by Miller.  We show that our general algorithm specializes
-	in a very convenient way to patterns.  We also sketch an efficient
+	In this paper, we investigate the case of higher-order patterns as
+	introduced by Miller. We show that our general algorithm specializes
+	in a very convenient way to patterns. We also sketch an efficient
 	implementation of the abstract algorithm and its generalization to
 	constraint simplification, which has yielded good experimental results
 	at the core of a higher-order constraint logic programming language.},
@@ -197,6 +232,38 @@
   author = {Forest, Julien},
   title = {Evaluation Strategies for Calculi with Explicit Pattern Matching
 	and Substitutions},
+  abstract = {Higher and First-Order Pattern calculi such as for example [BTKP93,
+	CK99] were proposed as a theoretical model for programming languages
+	with function definition by cases (CAML [Obj], HASKELL [HPJe92]).
+	
+	
+	An evaluation strategy gives a deterministic way to proceed with evaluation
+	of terms of a given calculus.  Thus for example, the so called lazy
+	and strict evaluation strategies are the most used in implementation
+	of functional programming languages.  Intuitively, a lazy strategy
+	evaluates a subterm of a given term if and only if this evaluation
+	is necessary to continue with the evaluation of the whole term. 
+	A strict strategy first evaluates the sub-terms of a term, even if
+	these evaluation are not necessary, and only then evaluates the term.
+	 Functional languages such as CAML use strict evaluation strategies
+	whether HASKELL implements a lazy strategy.
+	
+	
+	In this talk we are interested in the encoding of the Higher-Order
+	Calculus by using explicit operators for pattern matching and substitutions.
+	 In particular, we present two different evaluation strategies for
+	the TPC_{ES} calculus of Cerrito and Kesner [CK99].  For each of
+	these strategies we specify two evaluators, namely a big-step one
+	and a small-step one.  This work on calculi with explicit pattern
+	matching and substitutions can be seen as a extension of the work
+	of Hardin, Maranget and Pagano [HMP95].
+	
+	
+	The more interesting case is the small-step lazy evaluator which breaks
+	the orthogonality between pattern matching and substitution in such
+	a way that propagation of substitution is only performed when an
+	explicit substitution operator appears as the head constructor of
+	the term being evaluated.},
   file = {:forest-final.ps:PostScript},
   owner = {james},
   timestamp = {2013.05.21}
@@ -206,9 +273,60 @@
   author = {Andrew Gacek},
   title = {The Suspension Calculus and its Relationship to Other Explicit Treatments
 	of Substitution in Lambda Calculi},
+  school = {University of Minnesota},
   year = {2007},
+  abstract = {The intrinsic treatment of binding in the lambda calculus makes it
+	an ideal data structure for representing syntactic objects with binding
+	such as formulas, proofs, types, and programs. Supporting such a
+	data structure in an implementation is made difficult by the complexity
+	of the substitution operation relative to lambda terms. To remedy
+	this, researchers have suggested representing the meta level substitution
+	operation explicitly in a refined treatment of the lambda calculus.
+	The benefit of an explicit representation is that it allows for a
+	fine-grained control over the substitution process, leading also
+	to the ability to intermingle substitution with other operations
+	on lambda terms. This insight has lead to the development of various
+	explicit substitution calculi and to their exploitation in new algorithms
+	for operations such as higher-order unification. Considerable care
+	is needed, however, in designing explicit substitution calculi since
+	within them the usually implicit operations related to substitution
+	can interact in unexpected ways with notions of reduction from standard
+	treatments of the lambda calculus.
+	
+	
+	This thesis describes a particular realization of explicit substitutions
+	known as the suspension calculus and shows that it has many properties
+	that are useful in a computational setting. One significant property
+	is the ability to combine substitutions. An earlier version of the
+	suspension calculus has such an ability, but the complexity of the
+	machinery realizing it in a complete form has deterred its direct
+	use in implementations. To overcome this drawback a derived version
+	of the calculus had been developed and used in practice. Unfortunately,
+	the derived calculus sacrifices generality and loses a property that
+	is important for new approaches to unification. This thesis redresses
+	this situation by presenting a modified form of the substitution
+	combination mechanism that retains the generality and the computational
+	properties of the original calculus while being simple enough to
+	use directly in implementations. These modifications also rationalize
+	the structure of the calculus, making it possible to easily superimpose
+	additional logical structure over it. We illustrate this capability
+	by showing how typing in the lambda calculus can be treated in the
+	resulting framework and by presenting a natural translation into
+	the λσ-calculus, another well-known treatment of explicit substitutions.
+	
+	
+	Another contribution of this thesis is a survey of the realm of explicit
+	substitution calculi. In particular, we describe the computational
+	properties that are desired in this setting and then characterize
+	various calculi based on how well they capture these. We utilize
+	the simplified suspension calculus in this process. In particular,
+	we describe translations between the other popular calculi and the
+	suspension calculus towards understanding and contrasting their relative
+	capabilities. Finally, we discuss an elusive property of explicit
+	substitution calculi known as preservation of strong normalization
+	and discuss why there is hope that the suspension calculus possesses
+	this property.},
   file = {:2007_05.pdf:PDF},
-  keywords = {},
   owner = {james},
   timestamp = {2013.05.21}
 }
@@ -342,7 +460,6 @@
 	The originality of our proof is that it gives a very detailed account
 	of the implemented strategy.},
   file = {:Lang-07.pdf:PDF},
-  keywords = {},
   owner = {james},
   timestamp = {2013.05.21}
 }
@@ -352,11 +469,11 @@
   title = {A Natural Semantics for Lazy Evaluation},
   year = {1993},
   abstract = {We define an operational semantics for lazy evaluation which provides
-	an accurate model for sharing.  The only computational structure
-	we introduce is a set of bindings which corresponds closely to a
-	heap.  The semantics is set at a considerably higher level of abstraction
+	an accurate model for sharing. The only computational structure we
+	introduce is a set of bindings which corresponds closely to a heap.
+	The semantics is set at a considerably higher level of abstraction
 	than operational semantics for particular abstract machines, so is
-	more suitable for a variety of proofs.  Furthermore, because a heap
+	more suitable for a variety of proofs. Furthermore, because a heap
 	is explicitly modelled, the semantics provides a suitable framework
 	for studies about space behaviour of terms under lazy evaluation.},
   file = {:launchbury.ps.gz:PostScript},
@@ -369,6 +486,13 @@
 	and Peyton Jones, Simon and Wadler, Philip},
   title = {Avoiding Unnecessary Updates},
   year = {1993},
+  abstract = {Graph reduction underlies most implementations of lazy functional
+	languages, allowing separate computations to share results when subterms
+	are evaluated. Once a term is evaluated, the node of the graph representing
+	the computation is updated with the value of the term. However, in
+	many cases, no other computation requires this value, so the update
+	is unnecessary. In this paper we take some steps towards an analysis
+	for determining when these updates may be omitted.},
   file = {:avoiding-updates.pdf:PDF},
   owner = {james},
   timestamp = {2013.05.21}
@@ -415,7 +539,6 @@
   pages = {177--207},
   number = {2},
   month = jan,
-  __markedentry = {[james]},
   abstract = {We present the type rules for a dependently typed core calculus together
 	with a straight-forward implementation in Haskell. We explicitly
 	highlight the changes necessary to shift from a simply-typed lambda
@@ -440,11 +563,11 @@
   number = {3},
   month = {May},
   abstract = {We present a calculus that captures the operational semantics of call-by-need.
-	 The call-by-need lambda calculus is confluent, has a notion of standard
+	The call-by-need lambda calculus is confluent, has a notion of standard
 	reduction, and entails the same observational equivalence relation
-	as the call-by-name calculus.  The system can be formulated with
-	or without explicit let bindings, admits useful notions of marking
-	and developments, and has a straightforward operational interpretation.},
+	as the call-by-name calculus. The system can be formulated with or
+	without explicit let bindings, admits useful notions of marking and
+	developments, and has a straightforward operational interpretation.},
   file = {:JFP98.ps.gz:PostScript},
   owner = {james},
   timestamp = {2013.05.21}
@@ -533,9 +656,9 @@
   abstract = {In this paper we consider rewrite systems that describe the λ-calculus
 	enriched with recursive and non-recursive local definitions by generalizing
 	the ‘explicit substitutions’ used by Abadi, Cardelli, Curien, and
-	Lévy [1] to describe sharing in λ-terms.  This leads to ‘explicit
+	Lévy [1] to describe sharing in λ-terms. This leads to ‘explicit
 	cyclic substitutions’ that can describe the mutual sharing of local
-	recursive definitions.  We demonstrate how this may be used to describe
+	recursive definitions. We demonstrate how this may be used to describe
 	standard binding constructions (let and letrec)--directly using substitution
 	and fixed point induction as well as using ‘small step’ rewriting
 	semantics where substitution is interleaved with the mechanics of
@@ -557,18 +680,18 @@
   organization = {ACM},
   abstract = {Recent advances in compiler technology have demonstrated the benefits
 	of using strongly typed intermediate languages to compile richly
-	typed source languages (e.g., ML).  A type-preserving compiler can
+	typed source languages (e.g., ML). A type-preserving compiler can
 	use types to guide advanced optimizations and to help generate provably
-	secure mobile code.  Types, unfortunately, are very hard to represent
+	secure mobile code. Types, unfortunately, are very hard to represent
 	and manipulate efficiently; a naive implementation can easily add
 	exponential overhead to the compilation and execution of a program.
-	 This paper describes our experience with implementing the FLINT
-	typed intermediate language in the SML/NJ production compiler.  We
-	observe that a type-preserving compiler will not scale to handle
-	large types unless all of its type-preserving stages preserve the
-	asymptotic time and space usage in representing and manipulating
-	types.  We present a series of novel techniques for achieving this
-	property and give empirical evidence of their effectiveness.},
+	This paper describes our experience with implementing the FLINT typed
+	intermediate language in the SML/NJ production compiler. We observe
+	that a type-preserving compiler will not scale to handle large types
+	unless all of its type-preserving stages preserve the asymptotic
+	time and space usage in representing and manipulating types. We present
+	a series of novel techniques for achieving this property and give
+	empirical evidence of their effectiveness.},
   file = {:imp.ps.gz:PostScript},
   owner = {james},
   timestamp = {2013.05.21}
@@ -633,20 +756,20 @@
   abstract = {We study four transformation methodologies which are automatic instances
 	of Burstall and Darlington's fold/unfold framework: partial evaluation,
 	deforestation, supercompilation, and generalized partial computation
-	(GPC).  One can classify these and other fold/unfold based transformers
+	(GPC). One can classify these and other fold/unfold based transformers
 	by how much information they maintain during transformation.
 	
 	
 	We introduce the positive supercompiler, a version of deforestation
 	including more information propagation, to study such a classification
-	in detail.  Via the study of positive supercompilation, we are able
+	in detail. Via the study of positive supercompilation, we are able
 	to show that partial evaluation and deforestation have simple information
 	propagation, positive supercompilation has more information propagation,
 	and supercompilation and GPC have even more information propagation.
-	 The amount of information propagation is significant: positive supercompilation,
+	The amount of information propagation is significant: positive supercompilation,
 	GPC, and supercompilation can specialize a general pattern matcher
 	to a fixed pattern so as to obtain efficient output similar to that
-	of the Knuth-Morris-Pratt algorithm.  In the case of partial evaluation
+	of the Knuth-Morris-Pratt algorithm. In the case of partial evaluation
 	and deforestation, the general matcher must be rewritten to achieve
 	this.},
   doi = {10.1.1.36.2695},
@@ -694,4 +817,17 @@
 @comment{jabref-meta: selector_journal:}
 
 @comment{jabref-meta: selector_keywords:}
+
+@comment{jabref-meta: groupsversion:3;}
+
+@comment{jabref-meta: groupstree:
+0 AllEntriesGroup:;
+1 ExplicitGroup:Topic\;0\;;
+2 ExplicitGroup:Explicit substitutions\;0\;Abel2010\;Benaissa1995\;Ben
+aissa1996\;Dowek1998\;Gacek2007\;Gacek2007a\;Ghani2006\;Rose1993\;;
+2 ExplicitGroup:Evaluation strategies\;0\;;
+2 ExplicitGroup:Term representation\;0\;;
+2 ExplicitGroup:Typechecking\;0\;;
+2 ExplicitGroup:True metavariables\;0\;;
+}
 
