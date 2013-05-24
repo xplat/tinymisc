@@ -12,6 +12,29 @@
   - The notes in [[Reading list]] are those that apply fairly directly to
     particular articles and the issues they raise.  Topic-focused discussion
     that cites several articles should go under other headings.
+* Agenda
+** TODO Get a buildable TinyAgda package that can fail tests
+** Set up repo for the TinyAgda source proper
+*** darcs -- the better to sync the test suite with
+*** as of <2013-05-24 Fri> blocked on waiting for code.haskell.org account
+** TODO core calculus to describe 'what Agda is'
+* What to implement and how
+** Term representation
+*** Sharing: closure-based, graph-based, heap-based?
+**** Closure-based
+***** PRO: representation is pure
+****** does not need to live in IO
+****** no worries about ephemeral data or conflicting side effects
+****** term rewriting formalism, not graph or forest rewriting
+***** PRO: can use explicit substitutions as closures
+****** lots of existing work, including application
+****** handles metavariables naturally
+****** combine multiple walks, including reduction and inst. ([[notes:Abel2010][Abel2010-notes]])
+***** CON: poor handling of sharing outside the scope of a single term
+****** even frozen metas are quantified over at least a mutual block
+****** thanks to syntax sugar this can be even bigger than it looks
+***** CON: complete laziness is not well-formalized in this context
+****** but plain laziness is ([[notes:Maraist1998][Maraist1998-notes]])
 * Reading list
 ** HOW TO ADD NOTES HERE 					       :meta:
    1) If the article is already listed here, skip to step 4.
@@ -79,6 +102,18 @@
       Huet.  We also show a more efficient strategy for producing the same
       solutions using intermediate steps which can only be represented due
       to the use of explicit substitutions in the term representation.
+** [[bib:Abel2010][Explicit Substitutions for Contextual Type Theory]]
+   - Andreas Abel & Brigitte Pientka
+   - EPTCS, 2010
+:PROPERTIES:
+:Custom_ID: Abel2010
+:END:
+** [[bib:Maraist1998][The Call-by-Need Lambda Calculus]]
+   - Maraist, Odersky & Wadler
+   - JFP, 1998
+:PROPERTIES:
+:Custom_ID: Maraist1998
+:END:
 * SECRET EMACS SETTINGS					      :administrivia:
 # Local Variables:
 # eval: (reftex-mode)
