@@ -137,6 +137,44 @@
   timestamp = {2013.05.21}
 }
 
+@ARTICLE{Dolstra2009,
+  author = {Dolstra, Eelco},
+  title = {Maximal Laziness: An Efficient Interpretation Technique for Purely
+	Functional DSLs},
+  journal = {Electronic Notes in Theoretical Computer Science},
+  year = {2009},
+  volume = {238},
+  pages = {81--99},
+  number = {5},
+  month = oct,
+  __markedentry = {[james]},
+  abstract = {In lazy functional languages, any variable is evaluated at most once.
+	This paper proposes the notion of maximal laziness, in which syntactically
+	equal terms are evaluated at most once: if two terms e₁ and e₂ arising
+	during the evaluation of a program have the same abstract syntax
+	representation, then only one will be evaluated, while the other
+	will reuse the former's evaluation result. Maximal laziness can be
+	implemented easily in interpreters for purely functional languages
+	based on term rewriting systems that have the property of maximal
+	sharing — if two terms are equal, they have the same address. It
+	makes it easier to write interpreters, as techniques such as closure
+	updating, which would otherwise be required for efficiency, are not
+	needed. Instead, a straight-forward translation of call-by-name semantic
+	rules yields a call-by-need interpreter, reducing the gap between
+	the language specification and its implementation. Moreover, maximal
+	laziness obviates the need for optimisations such as memoisation
+	and let-floating.},
+  booktitle = {Proceedings of the 8th Workshop on Language Descriptions, Tools and
+	Applications (LDTA 2008)},
+  doi = {10.1016/j.entcs.2009.09.042},
+  file = {:laziness-ldta2008-final.pdf:PDF},
+  issn = {1571-0661},
+  keywords = {Lazy functional language, maximal laziness, maximal sharing},
+  owner = {james},
+  timestamp = {2013.05.24},
+  url = {http://www.sciencedirect.com/science/article/pii/S157106610900396X}
+}
+
 @ARTICLE{Dowek2000,
   author = {Dowek, Gilles and Hardin, Thérèse and Kirchner, Claude},
   title = {Higher Order Unification via Explicit Substitutions},
@@ -239,25 +277,25 @@
 	
 	
 	An evaluation strategy gives a deterministic way to proceed with evaluation
-	of terms of a given calculus.  Thus for example, the so called lazy
+	of terms of a given calculus. Thus for example, the so called lazy
 	and strict evaluation strategies are the most used in implementation
-	of functional programming languages.  Intuitively, a lazy strategy
+	of functional programming languages. Intuitively, a lazy strategy
 	evaluates a subterm of a given term if and only if this evaluation
-	is necessary to continue with the evaluation of the whole term. 
-	A strict strategy first evaluates the sub-terms of a term, even if
+	is necessary to continue with the evaluation of the whole term. A
+	strict strategy first evaluates the sub-terms of a term, even if
 	these evaluation are not necessary, and only then evaluates the term.
-	 Functional languages such as CAML use strict evaluation strategies
+	Functional languages such as CAML use strict evaluation strategies
 	whether HASKELL implements a lazy strategy.
 	
 	
 	In this talk we are interested in the encoding of the Higher-Order
 	Calculus by using explicit operators for pattern matching and substitutions.
-	 In particular, we present two different evaluation strategies for
-	the TPC_{ES} calculus of Cerrito and Kesner [CK99].  For each of
-	these strategies we specify two evaluators, namely a big-step one
-	and a small-step one.  This work on calculi with explicit pattern
-	matching and substitutions can be seen as a extension of the work
-	of Hardin, Maranget and Pagano [HMP95].
+	In particular, we present two different evaluation strategies for
+	the TPC_{ES} calculus of Cerrito and Kesner [CK99]. For each of these
+	strategies we specify two evaluators, namely a big-step one and a
+	small-step one. This work on calculi with explicit pattern matching
+	and substitutions can be seen as a extension of the work of Hardin,
+	Maranget and Pagano [HMP95].
 	
 	
 	The more interesting case is the small-step lazy evaluator which breaks
