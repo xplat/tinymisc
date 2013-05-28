@@ -34,7 +34,7 @@ for i in *; do
     tpath="../.git/annex/tmp/$key"
     if curl -fgL -o "$tpath" "$url"; then
       checkkey="SHA256-s$(find "$tpath" -printf "%s")--$(sha256sum "$tpath" | cut -c -64)"
-      if [ "$checkkey" == "$key" ]; then
+      if [ "$checkkey" = "$key" ]; then
         # success
         mkdir -p "$(dirname "$link")"
         mv -n -- "$tpath" "$link"
