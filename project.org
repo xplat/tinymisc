@@ -20,6 +20,14 @@
 ** TODO core calculus to describe 'what Agda is'
 * What to implement and how
 ** Term representation
+*** <2013-05-16 Thu> [[mid:519535FB.3040007@cse.gu.se]["Re: Agda fork"]]				    :rec@NAD:
+**** recommended 4 papers:
+***** [[notes:Shao1998][Shao1998]] "Implementing Typed Intermediate Languages"
+***** [[notes:Liang2004][Liang2004]] "Choices in Representation and Reduction Strategies..."
+***** [[notes:Gacek2007][Gacek2007]] "A Simplified Suspension Calculus and its Relationship..."
+***** [[notes:Dowek2000][Dowek2000]] "Higher Order Unification via Explicit Substitutions"
+**** "Combining the techniques described in (at least) the first
+      three papers above seems promising."
 *** Sharing: closure-based, graph-based, heap-based?
 **** Closure-based
 ***** PRO: representation is pure
@@ -54,28 +62,50 @@
 :PROPERTIES:
 :Custom_ID: Shao1998
 :END:
-*** [quote pending approval]					    :rec@NAD:
+*** <2013-05-16 Thu> [[mid:519535FB.3040007@cse.gu.se]["Re: Agda fork"]]				    :rec@NAD:
+    Describes an implementation of a compiler with an intermediate
+    language using F_ω-style types. Techniques used: hash-consing,
+    memoisation, explicit substitutions (suspensions à la Nadathur and
+    Wilson), de Bruijn indices, and something resembling the locally
+    nameless variable representation.
 ** [[bib:Liang2004][Choices in Representation and Reduction Strategies for Lambda Terms in Intensional Contexts]]
    - Liang, Nadathur & Qi
    - Journal of Automated Reasoning, 2004
 :PROPERTIES:
 :Custom_ID: Liang2004
 :END:
-*** [quote pending approval]					    :rec@NAD:
+*** <2013-05-16 Thu> [[mid:519535FB.3040007@cse.gu.se]["Re: Agda fork"]]				    :rec@NAD:
+    Discusses various ways of implementing λProlog. Documents lots of
+    experiments. The following seems like a good combination of choices:
+
+    - Substitution implemented non-strictly, using a certain form of
+      explicit substitutions (suspensions).
+
+    - Reduction implemented non-strictly.
+
+    - de Bruijn indices.
+
+    - Do not keep track of which terms are closed.
 ** [[bib:Gacek2007][A Simplified Suspension Calculus and its Relationship to Other Explicit Substitution Calculi]]
    - Gacek & Nadathur
    - Technical report, 2007
 :PROPERTIES:
 :Custom_ID: Gacek2007
 :END:
-*** [quote pending approval]					    :rec@NAD:
+*** <2013-05-16 Thu> [[mid:519535FB.3040007@cse.gu.se]["Re: Agda fork"]]				    :rec@NAD:
+    Discusses a variant of the suspension calculus used in the previous
+    paper [[notes:Liang2004][(Liang2004)]]. Includes a detailed comparison with the λσ-calculus.
+    The calculus is claimed to support the unification algorithm described
+    in the next paper [[notes:Dowek2000][(Dowek2000)]].
 ** [[bib:Dowek2000][Higher Order Unification via Explicit Substitutions]]
    - Dowek, Hardin & Kirchner
    - Information and Computation, 2000
 :PROPERTIES:
 :Custom_ID: Dowek2000
 :END:
-*** [quote pending approval]					    :rec@NAD:
+*** <2013-05-16 Thu> [[mid:519535FB.3040007@cse.gu.se]["Re: Agda fork"]]				    :rec@NAD:
+    Reduces higher-order unification to first-order unification. I'm not
+    sure if this leads to performance improvements.
 *** Better than it sounds 					 :talk@xplat:
     This is a good example of a fantastic result getting buried under a
     blah abstract.  The original abstract makes this sound like an
@@ -119,7 +149,7 @@
 # eval: (reftex-mode)
 # reftex-default-bibliography: ("readings.bib")
 # reftex-cite-punctuation: (", " " & " " et al.")
-# reftex-cite-format: ((?b . "[[bib:%l][%l-bib]]") (?n . "[[notes:%l][%l-notes]]")
+# reftex-cite-format: ((?b . "[[bib:%l][%l-bib]]") (?n . "[[notes:%l][%l]]")
 #   (?p . "[[papers:%l][%l-paper]]") (?t . "%t")
 #   (?h . "** [[bib:%l][%t]]\n   - %a\n   - %j, %b %s, %y\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n"))
 # End:
