@@ -1,0 +1,296 @@
+(\z -> fst z + snd z) ((\x -> let y = x * x in (y, y * x)) 7)
+
+-- Sinot
+let Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7 in (let V[z] = (let U[z] = snd z in let T[z] = fst z in T[z] + U[z]) in \j -> V[j]) Z[]
+  | .
+> (let V[z] = (let U[z] = snd z in let T[z] = fst z in T[z] + U[z]) in \j -> V[j]) Z[]
+    | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+  > let V[z] = (let U[z] = snd z in let T[z] = fst z in T[z] + U[z]) in \j -> V[j]
+      | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+    > \j -> V[j]
+        | V[z] = let U[z] = snd z in let T[z] = fst z in T[z] + U[z]
+        | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+      <
+    <
+  > V[j]
+      | j = Z[]
+      | V[z] = let U[z] = snd z in let T[z] = fst z in T[z] + U[z]
+      | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+    > let U[z] = snd z in let T[z] = fst z in T[z] + U[z]
+        | j = Z[]
+        | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+      > let T[z] = fst z in T[z] + U[z]
+          | j = Z[]
+          | U[z] = snd z
+          | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+        > T[z] + U[z]
+            | j = Z[]
+            | T[z] = fst z
+            | U[z] = snd z
+            | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+          > T[z]
+              | j = Z[]
+              | T[z] = fst z
+              | U[z] = snd z
+              | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+            > fst z
+                | j = Z[]
+                | U[z] = snd z
+                | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+              > z
+                  | j = Z[]
+                  | U[z] = snd z
+                  | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+                < -- BLOCKED on z
+              < fst z -- BLOCKED on z
+                  | j = Z[]
+                  | U[z] = snd z
+                  | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+            > fst z
+                | j = Z[]
+                | T[z] := fst z
+                | U[z] = snd z
+                | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+              < -- still blocked
+            < -- BLOCKED on z
+          > U[z]
+              | j = Z[]
+              | T[z] := fst z
+              | U[z] = snd z
+              | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+            > snd z
+                | j = Z[]
+                | T[z] := fst z
+                | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+              > z
+                  | j = Z[]
+                  | T[z] := fst z
+                  | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+                < -- BLOCKED on z
+              < snd z -- BLOCKED on z
+                  | j = Z[]
+                  | T[z] := fst z
+                  | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+            > snd z
+                | j = Z[]
+                | T[z] := fst z
+                | U[z] := fst z
+                | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+              < -- still blocked
+            < -- BLOCKED on z
+          < -- BLOCKED on z
+        < -- BLOCKED on z
+      < -- BLOCKED on z
+    > fst j + snd j
+        | j = Z[]
+        | T[z] := fst z
+        | U[z] := fst z
+        | V[z] := fst z + snd z
+        | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+      > fst j
+          | j = Z[]
+          | T[z] := fst z
+          | U[z] := fst z
+          | V[z] := fst z + snd z
+          | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+        > j
+            | j = Z[]
+            | T[z] := fst z
+            | U[z] := fst z
+            | V[z] := fst z + snd z
+            | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+          > Z[]
+              | T[z] := fst z
+              | U[z] := fst z
+              | V[z] := fst z + snd z
+              | Z[] = (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+            > (let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]) 7
+                | T[z] := fst z
+                | U[z] := fst z
+                | V[z] := fst z + snd z
+              > let Y[x] = (let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))) in \i -> Y[i]
+                  | T[z] := fst z
+                  | U[z] := fst z
+                  | V[z] := fst z + snd z
+		> \i -> Y[i]
+                    | T[z] := fst z
+                    | U[z] := fst z
+                    | V[z] := fst z + snd z
+                    | Y[x] = let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))
+                  <
+                <
+              > Y[i]
+                  | i = 7
+                  | T[z] := fst z
+                  | U[z] := fst z
+                  | V[z] := fst z + snd z
+                  | Y[x] = let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))
+                > let X[x] = x * x, y = X[x] in (let W[x] = y * x in (y, W[x]))
+                    | i = 7
+                    | T[z] := fst z
+                    | U[z] := fst z
+                    | V[z] := fst z + snd z
+                  > let W[x] = y * x in (y, W[x])
+                      | i = 7
+                      | y = X[x]
+                      | T[z] := fst z
+                      | U[z] := fst z
+                      | V[z] := fst z + snd z
+                      | X[x] = x * x
+                    > (y, W[x])
+                        | i = 7
+                        | y = X[x]
+                        | T[z] := fst z
+                        | U[z] := fst z
+                        | V[z] := fst z + snd z
+                        | W[x] = y * x
+                        | X[x] = x * x
+                      < -- already a value
+                      -- XXX what now?  how do i handle this y?
+
+
+
+
+
+
+
+
+-- Launchbury
+let k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 in (\z -> let i = fst z in let j = snd z in i + j) k
+  | .
+> (\z -> let i = fst z in let j = snd z in i + j) k
+    | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+  > (\z -> let i = fst z in let j = snd z in i + j)
+      | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+    <
+  > let i = fst k in let j = snd k in i + j
+      | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+    > let j = snd k in i + j
+        | i = fst k ;
+        | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+      > i + j
+          | i = fst k ;
+          | j = snd k ;
+          | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+        > i
+            | i = fst k ;
+            | j = snd k ;
+            | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+          > fst k
+              | j = snd k ;
+              | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+            > k
+                | j = snd k
+                | k = (\x -> let y = x * x in let w = y * x in (y, w)) 7 .
+              > (\x -> let y = x * x in let w = y * x in (y, w)) 7
+                  | j = snd k
+                > \x -> let y = x * x in let w = y * x in (y, w)
+                    | j = snd k
+                  <
+                > let y = 7 * 7 in let w = y * 7 in (y, w)
+                    | j = snd k
+                  > let w = y * 7 in (y, w)
+                      | j = snd k
+                      | y = 7 * 7
+                    > (y, w)
+                        | j = snd k
+                        | w = y * 7
+                        | y = 7 * 7
+                      <
+                    <
+                  <
+                <
+              < (y, w)
+                  | j = snd k
+                  | k = (y, w)
+                  | w = y * 7
+                  | y = 7 * 7
+            > y
+                | j = snd k
+                | k = (y, w)
+                | w = y * 7
+                | y = 7 * 7
+              > 7 * 7
+                  | j = snd k
+                  | k = (y, w)
+                  | w = y * 7
+                < 49
+                    | j = snd k
+                    | k = (y, w)
+                    | w = y * 7
+              < 49
+                  | j = snd k
+                  | k = (y, w)
+                  | w = y * 7
+                  | y = 49
+            <
+          < 49
+              | i = 49
+              | j = snd k
+              | k = (y, w)
+              | w = y * 7
+              | y = 49
+        > j
+            | i = 49
+            | j = snd k
+            | k = (y, w)
+            | w = y * 7
+            | y = 49
+          > snd k
+              | i = 49
+              | k = (y, w)
+              | w = y * 7
+              | y = 49
+            > k
+                | i = 49
+                | k = (y, w)
+                | w = y * 7
+                | y = 49
+              < (y, w) -- shortcut since k is already evaluated
+                  | i = 49
+                  | k = (y, w)
+                  | w = y * 7
+                  | y = 49
+            > w
+                | i = 49
+                | k = (y, w)
+                | w = y * 7
+                | y = 49
+              > y * 7
+                  | i = 49
+                  | k = (y, w)
+                  | y = 49
+                > y
+                    | i = 49
+                    | k = (y, w)
+                    | y = 49
+                  < 49
+                      | i = 49
+                      | k = (y, w)
+                      | y = 49
+                < 343 -- 49 * 7
+                    | i = 49
+                    | k = (y, w)
+                    | y = 49
+              < 343
+                  | i = 49
+                  | k = (y, w)
+                  | w = 343
+                  | y = 49
+            <
+          < 343
+              | i = 49
+              | j = 343
+              | k = (y, w)
+              | w = 343
+              | y = 49
+        < 392 -- 49 + 343
+            | i = 49
+            | j = 343
+            | k = (y, w)
+            | w = 343
+            | y = 49
+      <
+    <
+  <
+<
